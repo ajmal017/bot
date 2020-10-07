@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    
+    <form action="" method="post">
+    	<label for='account'>Счёт</label>
+		<select name='accounts' method="GET" action="/">
+    		{% for acc in accs %}
+    			<option value= "{{acc}}" SELECTED>{{acc}}</option>"
+    		{% endfor %}
+		</select>
+
+        <p>
+	    	<label for="data">Дата начала учёта</label>
+	    	<input type="text" name="data">
+		</p>
+
+		<select name='period' method="GET" action="/">
+    		<option value='month'>Месяц</option>
+    		<option value='quartal'>Квартал</option>
+    		<option value='year'>Год</option>
+		</select>
+
+		<p>
+	    	<label for="value">Начальные средства</label>
+	    	<input type="text" name="value">
+		</p>
+
+        <p>
+        	<label for=''>Success fee, в %</label>
+        	<input type='text' name='suc_fee'>
+        </p>
+
+		<p>
+	    	<label for="password">Риск, в %</label>
+	    	<input type="text" name="risk">
+		</p>
+	<p>
+	    <input type="submit">
+	</p>
+    </form>
+    
+</body>
+</html>
